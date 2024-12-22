@@ -1,0 +1,254 @@
+@font-face {
+  font-family: "Arial cond";
+  src: url(Arial-MT-Condensed-Normal.ttf);
+}
+
+:root {
+  --light-gray: rgb(239, 239, 239);
+  --dark-gray: rgb(173, 173, 173); 
+}
+
+body{
+  padding: 2vw 20vw;
+  position: relative;
+  color: blue;
+  font-family: "Arial cond", Arial, sans-serif;
+  letter-spacing:0.05rem;
+  font-size: larger;
+  line-height: 180%;
+}
+
+
+a{
+  color: black;
+  text-decoration: none;
+  text-underline-offset: 0.2rem;
+  text-decoration-color: white;
+}
+
+.counter {
+  font-size: small;
+  color: var(--dark-gray);
+  position: absolute;
+  top: 5vh;
+  right: 7vw;
+}
+
+#counter1, #counter2, #counter3, #counter4, #counter5, #counter6, #counter7 {
+  position: absolute;
+  top: 0vh;
+  padding: 0;
+  margin: 0;
+}
+
+
+.lang {
+  font-size: small;
+  color: var(--dark-gray);
+  display: block;
+  position: absolute;
+  top: 5vh;
+  left: 10vw;
+  right:auto;
+}
+
+#question{
+  color: black;
+  font-size: x-large;
+  display: block;
+  position: absolute;
+  top:12vh;
+}
+
+.content{
+  display: inline;
+  position: relative;
+  top:13vh;
+  width:80%;
+}
+
+#cursor {
+  display: inline-block;
+  position: relative;
+  top: 13.5vh;
+  width: 2px;
+  height: 1em;
+  background-color: black;
+  animation-duration: 0.5s;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+#about{
+  width: 1.5em;
+  height: 1.5em;
+  font-size: smaller;
+  text-align: center;
+  padding: 0.2em 0.2em 0.7em;
+  background-color: white;
+  position: fixed;
+  border: none;
+  bottom: 5vh;
+  right: 5vw;
+}
+
+.text-link{
+  color: blue;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#button {
+  display: block;
+  position: relative;
+  top: 6em;
+  border: none;
+  background-color: white;
+  border-radius: 5%;
+  color: black;
+  font-size: larger;
+}
+
+#button:hover, #about:hover, #closePopup:hover{
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+  border-color: none;
+}
+
+
+::selection {
+  background-color: blue;
+  color: white;
+}
+
+#mobile-type {
+  display: none;
+  width: 90%;
+  position: absolute;
+  padding: 2px;
+  top: 19vh;
+  width: 80vw;
+}
+
+
+.invisible {
+  opacity:0;
+}
+
+#landscape-warning{
+  opacity:0;
+}
+
+@media (hover:none){
+
+  * {
+    font-size: 18px;
+  }
+  body{
+    width: 85%;
+    padding:8vw 7vw;
+    background-color: var(--light-gray);
+    line-height: 1.5;
+  }
+
+  #question {
+    top:13vh;
+  }
+
+  #mobile-type {
+    display: inline;
+    top: 23vh;
+    color: white;
+    z-index: 1;
+  }
+  #cursor {
+    top: 13.5vh;
+  }
+.counter {  
+    position: absolute;
+    top: 5vh;
+    left: 85vw;
+    z-index: -1;
+}
+#counter1, #counter2, #counter3, #counter4, #counter5, #counter6, #counter7{
+    font-size: 15px;
+  }
+ a{
+  font-size: 15px;
+ } 
+.lang {  
+  position: absolute;
+  bottom: 5vh;
+  left: 5vw;
+  font-size: 15px;
+}
+
+.popup-content {
+  margin: 10% 15% auto auto;
+  padding: 40px 30px 30px 40px;
+}
+
+#about{
+  bottom: 10vh;
+  right: 10vw;
+}
+
+}
+
+/*disable landscape view on mobile*/
+@media only screen and (hover:none) and (orientation: landscape) {
+  #question, #mobile-type{
+    display: none;
+  }
+  #landscape-warning{
+    opacity:1;
+    position: absolute;
+    top: 30vh;
+  } 
+}
+
+.popup {
+  /*grey background*/
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+.popup-content {
+  position: relative;
+  background-color: white;
+  margin: 10% auto auto auto;
+  padding: 40px 30px 30px 40px;
+  width: 60%;
+  max-width: 500px;
+  color: black;
+  line-height: 1.5;
+  font-size: medium;
+  hyphens: auto;
+}
+.popup-content button {
+  margin-top: 1em;
+}
+.show {
+  display: block;
+}
+#closePopup{
+  color: blue;
+  background-color: white;
+  border: none;
+  font-size: large;
+}
